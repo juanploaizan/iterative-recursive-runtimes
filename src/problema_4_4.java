@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class problema_4_4 {
+public class Problema_4_4 {
 
     public static void main(String[] args) {
         int[][] matriz = {

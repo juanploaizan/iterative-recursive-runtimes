@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class problema_4_2 {
+public class Problema_4_2 {
     public static void main(String[] args) {
         int n;
         String input = JOptionPane.showInputDialog("Ingrese el valor de n.");

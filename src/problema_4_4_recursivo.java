@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class problema_4_4_recursivo {
+public class Problema_4_4_Recursivo {
 
     public static void main(String[] args) {
         int[][] matriz = {
