@@ -11,7 +11,7 @@ Número hambriento:
 el k-ésimo número hambriento es el más pequeño número natural n que cumple que 2^n
 contiene los primeros k dígitos de Pi. Los primeros números hambrientos son: 5, 17, 74, 144,
  */
-public class problema_4_3 {
+public class Problema_4_3 {
 
     public static void main(String[] args) {
 
