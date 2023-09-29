@@ -1,12 +1,24 @@
+/**
+ * Este programa solicita al usuario ingresar un número entero 'n' y luego
+ * calcula y muestra dos representaciones de una matriz cuadrada 'n x n'.
+ * El programa implementa dos enfoques diferentes para llenar la matriz:
+ * uno de manera iterativa y otro de manera recursiva. Luego, muestra el tiempo
+ * de ejecución de ambos enfoques y la diferencia en el tiempo de ejecución.
+ */
+package problema_4_2;
+
 import javax.swing.*;
 
-public class problema_4_2 {
+public class Main {
     public static void main(String[] args) {
         int n;
         String input = JOptionPane.showInputDialog("Ingrese el valor de n.");
         try {
+            // Lee el valor de 'n' ingresado por el usuario.
             n = Integer.parseInt(input);
+
             if (n % 2 == 0) {
+                // Verifica si 'n' es par y muestra un mensaje de error si lo es.
                 System.err.println("El valor de n debe ser impar.");
             } else {
                 int[][] matrizIterativa = new int[n][n], matrizRecursiva = new int[n][n];
@@ -29,13 +41,19 @@ public class problema_4_2 {
                 mostrarMatriz(matrizRecursiva);
                 System.out.println("Tiempo de ejecución del método RECURSIVO (nano): " + tiempoRecursivo + "\n");
 
+                // Muestra la diferencia en el tiempo de ejecución entre los algoritmos.
                 System.out.println("La diferencia de los algoritmos, respectivamente, es de: " + (tiempoRecursivo - tiempoIterativo) + " nanosegundos.");
             }
         } catch (NumberFormatException e) {
+            // Maneja la excepción si el valor ingresado no es un número entero.
             System.err.println("El valor ingresado no es un número entero.");
         }
     }
 
+    /**
+     * Imprime una matriz en la consola.
+     * @param matriz La matriz que se va a imprimir.
+     */
     private static void mostrarMatriz(int[][] matriz) {
         for (int[] ints : matriz) {
             for (int j = 0; j < matriz[0].length; j++) {
@@ -46,7 +64,8 @@ public class problema_4_2 {
     }
 
     /**
-     * Método iterativo
+     * Llena una matriz de manera iterativa siguiendo un patrón especificado.
+     * @param matriz La matriz a llenar.
      */
     private static void llenarMatrizIterativamente(int[][] matriz) {
         int n = matriz.length;
@@ -60,7 +79,12 @@ public class problema_4_2 {
     }
 
     /**
-     * Método recursivo
+     * Llena una matriz de manera recursiva siguiendo un patrón especificado.
+     * @param matriz La matriz a llenar.
+     * @param fila Índice de fila actual.
+     * @param columna Índice de columna actual.
+     * @param sec Valor que se utiliza en el cálculo.
+     * @return La matriz llenada.
      */
     private static int[][] llenarMatrizRecursivamente(int[][] matriz, int fila, int columna, int sec) {
         if (columna >= matriz.length) {
@@ -73,5 +97,4 @@ public class problema_4_2 {
             return llenarMatrizRecursivamente(matriz, (columna + 2) / 2, columna + 2, 0);
         }
     }
-
 }
